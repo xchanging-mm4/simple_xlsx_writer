@@ -71,12 +71,14 @@ ends
 
   def self.column_index n
     result = []
+    correction = 0
     while n >= 26 do
-      result << abc[n % 26]
+      rest = n % 26
+      result << abc[rest - correction]
+      if correction == 0 && rest == 0
+        correction = 1
+      end
       n /= 26
-
-
-      break if n == 26
     end
 
     result << abc[result.empty? ? n : n - 1]

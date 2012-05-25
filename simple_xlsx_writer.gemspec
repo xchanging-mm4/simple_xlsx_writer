@@ -1,24 +1,21 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "simple_xlsx_writer/version"
+require 'rake'
 
 Gem::Specification.new do |s|
-  s.name        = "simple_xlsx_writer"
-  s.version     = SimpleXlsxWriter::VERSION
-  s.authors     = ["Evgeny Belorusets"]
-  s.email       = ["evgenybelorusets@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
-
+  s.name = "simple_xlsx_writer"
+  s.version = "0.5.3"
+  s.author = "Dee Zsombor"
+  s.email = "zsombor@primalgrasp.com"
+  s.homepage = "http://simplxlsxwriter.rubyforge.org"
   s.rubyforge_project = "simple_xlsx_writer"
-
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
-
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.required_rubygems_version = Gem::Requirement.new(">= 1.3.6") if s.respond_to? :required_rubygems_version=
+  s.platform = Gem::Platform::RUBY
+  s.summary = "Just as the name says, simple writter for Office 2007+ Excel files"
+  s.files = [FileList["{bin,lib}/**/*"].to_a, "LICENSE", "Rakefile"].flatten
+  s.require_path = "lib"
+  s.test_files = [FileList["{test}/**/*test.rb"].to_a, "test/test_helper.rb"].flatten
+  s.has_rdoc = true
+  s.extra_rdoc_files = ["README"]
+  s.add_dependency("rubyzip", ">= 0.9.4")
+  s.add_dependency("fast_xs", ">= 0.7.3")
 end

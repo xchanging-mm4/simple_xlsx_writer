@@ -75,6 +75,7 @@ ends
       result << abc[n % 26]
       n /= 26
     end
+    break if n == 26
     result << abc[result.empty? ? n : n - 1]
     result.reverse.join
   end

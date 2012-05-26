@@ -1,6 +1,4 @@
 # -*- encoding: utf-8 -*-
-require 'rake'
-
 Gem::Specification.new do |s|
   s.name = "simple_xlsx_writer"
   s.version = "0.5.3"

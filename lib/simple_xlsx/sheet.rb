@@ -65,11 +65,11 @@ ends
       1462 # http://support.microsoft.com/kb/180162
   end
 
-  def abc
+  def self.abc
     @@abc ||= ('A'..'Z').to_a
   end
 
-  def column_index n
+  def self.column_index n
     result = []
     if n < 702
       while n >= 26 do

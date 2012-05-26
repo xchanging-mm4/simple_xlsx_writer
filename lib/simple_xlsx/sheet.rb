@@ -65,20 +65,24 @@ ends
       1462 # http://support.microsoft.com/kb/180162
   end
 
-  def self.abc
+  def abc
     @@abc ||= ('A'..'Z').to_a
   end
 
-  def self.column_index n
+  def column_index n
     result = []
-    correction = 0
-    while n >= 26 do
-      rest = n % 26
-      result << abc[rest - correction]
-      if correction == 0 && rest == 0
-        correction = 1
+    if n < 702
+      while n >= 26 do
+        result << abc[n % 26]
+        n /= 26
+        break if n == 26
       end
-      n /= 26
+    else
+      n -= 26
+      while n >= 26 do
+        result << abc[n % 26]
+        n /= 26
+      end
     end
 
     result << abc[result.empty? ? n : n - 1]

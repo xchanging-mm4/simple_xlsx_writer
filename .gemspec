@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Evgeny Belorusets"]
   s.email       = ["evgenybelorusets@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Fork of simple_xlsx_writer gem}
+  s.description = %q{Fork of simple_xlsx_writer gem}
 
   s.rubyforge_project = "simple_xlsx_writer"
 
